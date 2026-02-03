@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.calculator-form {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-wrapper input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.cidr-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+.cidr-select:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.calculate-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.calculate-btn:hover {
+    background: #555;
+}
+
+.results {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 25px;
+}
+
+.results.hidden {
+    display: none;
+}
+
+.result-section {
+    margin-bottom: 30px;
+}
+
+.result-section:last-child {
+    margin-bottom: 0;
+}
+
+.result-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    padding: 12px;
+    background: #f9f9f9;
+    border-left: 2px solid #999;
+}
+
+.info-item label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.info-item .value {
+    font-size: 1rem;
+    color: #333;
+    font-family: 'Courier New', monospace;
+    word-break: break-all;
+    font-weight: 500;
+}
+
+.error-message {
+    background: #fee;
+    border: 1px solid #fcc;
+    padding: 12px;
+    color: #c33;
+    text-align: center;
+}
+
+.error-message.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.subnetting-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.subnetting-section h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.subnetting-controls {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.subnetting-controls label {
+    font-weight: 500;
+    color: #555;
+}
+
+.subnet-btn {
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.subnet-btn:hover {
+    background: #555;
+}
+
+.subnet-btn:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+.subnets-list {
+    margin-top: 20px;
+}
+
+.subnets-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.subnets-list th {
+    background: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-weight: 500;
+}
+
+.subnets-list td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    font-family: 'Courier New', monospace;
+}
+
+.subnets-list tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .calculator-form,
+    .results {
+        padding: 15px;
+    }
+    
+    .input-wrapper {
+        flex-direction: column;
+    }
+    
+    .cidr-select {
+        width: 100%;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subnetting-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .subnetting-controls input,
+    .subnetting-controls select {
+        width: 100%;
+    }
+
+    .subnet-btn {
+        width: 100%;
+    }
+
+    .subnets-list {
+        overflow-x: auto;
+    }
+}
